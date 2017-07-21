@@ -7,13 +7,15 @@ const Application = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 50px);
-  margin: 24px;
-  padding: 32px 16px;
-  border: 1px solid rgba(0, 0, 0, .12);
+  padding: 32px 8px;
+  min-height: 100vh;
+  border: 0;
 
-  & > * {
-    min-width: 480px;
+  @media (min-width: 600px) {
+    margin: 24px;
+    padding: 32px 16px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    min-height: calc(100vh - 50px);
   }
 `;
 

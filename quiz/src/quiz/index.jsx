@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Quiz from './quiz';
-
-const API = 'https://opentdb.com/api.php?amount=20';
+import { API } from '../constants';
 
 export default class QuizContainer extends Component {
   static propTypes = {

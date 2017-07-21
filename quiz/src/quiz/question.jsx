@@ -6,8 +6,12 @@ import RadioGroup from '../components/radio-group';
 import { shuffle } from '../utils';
 
 const H1 = styled.h1`
-  font-size: 48px;
+  font-size: 1.5rem;
   color: rgba(0, 0, 0, .87);
+
+  @media (min-width: 600px) {
+    font-size: 3rem;
+  }
 `;
 const Wrapper = styled.div`
   margin: 16px 0;

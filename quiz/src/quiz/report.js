@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const H1 = styled.h1`
-  font-size: 48px;
+  font-size: 3rem;
   color: rgba(0, 0, 0, .87);
   text-align: center;
 `;
 const P = styled.p`
-  font-size: 24px;
-  margin: 32px;
+  font-size: 1.5rem;
+  margin: 32px 0;
   text-align: center;
   color: rgba(0, 0, 0, .54);
 `;

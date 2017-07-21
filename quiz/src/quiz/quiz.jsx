@@ -7,13 +7,12 @@ import Timer from '../components/timer';
 import { TIME } from '../constants';
 
 const QuizWrap = styled.section`
-  display: flex;
-  width: 100%;
-  align-items: flex-end;
-
-  & > form {
-    flex-grow: 1;
-  }
+  position: relative;
+`;
+const Footer = styled.footer`
+  position: absolute;
+  right: 0;
+  bottom: 0;
 `;
 
 export default class Quiz extends Component {
@@ -52,7 +51,9 @@ export default class Quiz extends Component {
           question={questions[questionNo]} sno={questionNo + 1}
           onSubmit={this.updateScore}
         />
-        <Timer time={TIME} onTimeout={this.submitQuiz} />
+        <Footer>
+          <Timer time={TIME} onTimeout={this.submitQuiz} />
+        </Footer>
       </QuizWrap>
     ) : (
       <Report name={name} score={score} total={questions.length} />
