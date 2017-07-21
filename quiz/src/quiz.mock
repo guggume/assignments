@@ -1,0 +1,35 @@
+- TextInput
+- Button
+- RadioInput
+- Timer
+
+- User
+    - TextInput
+    - Button
+
+- Question (question, sno, onSubmit=points[0 | 1])
+    - RadioInput
+    - Button
+
+- Quiz (questions, qustionId = 0, answerd = 0)
+    - Question (question, onSubmit=updateResult)
+    - Timer (onTimeout=endQuiz)
+
+- QuizContainer (Fetch data)
+    - Quiz
+
+- Results (name, score, total)
+
+- App
+    - User (onSubmit=saveUser)
+    - QuizContainer (onComplete=saveResult)
+    - Results (user, answered)
+
+{
+    user: {
+        name: '',
+        email: '',
+        phone: '',
+    },
+    questions: [],
+}

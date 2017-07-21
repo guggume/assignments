@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Welcome from './welcome';
+import QuizContainer from './quiz';
+
+const Application = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 50px);
+  margin: 24px;
+  padding: 32px 16px;
+  border: 1px solid rgba(0, 0, 0, .12);
+
+  & > * {
+    min-width: 480px;
+  }
+`;
 
 class App extends Component {
+  state = {
+    user: null,
+  }
+
+  saveUser = (user) => {
+    this.setState({ user });
+  }
+
   render() {
+    const { user } = this.state;
+
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Application>
+        {!user && <Welcome onSubmit={this.saveUser} />}
+        {user && <QuizContainer name={user.name} /> }
+      </Application>
     );
   }
 }
